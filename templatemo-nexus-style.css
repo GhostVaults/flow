@@ -1636,3 +1636,78 @@ https://templatemo.com/tm-594-nexus-flow
         ::-webkit-scrollbar-thumb:hover {
             background: linear-gradient(var(--primary-pink), var(--primary-cyan));
         }
+
+/* === Mobile Optimization Patch === */
+@media (max-width: 768px) {
+  /* Hero */
+  .hero-title {
+    font-size: 28px;
+    line-height: 1.2;
+    text-align: center;
+  }
+  .hero-subtitle {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .hero-buttons a {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* Features grid */
+  .features-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .feature-card {
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+  }
+
+  /* Pricing grid */
+  .pricing-grid {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .pricing-card {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  .plan-price {
+    font-size: 26px;
+  }
+
+  /* Contact form */
+  .contact-form {
+    padding: 0 12px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px;
+  }
+  .btn-submit {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 22px;
+  }
+  .hero-subtitle {
+    font-size: 13px;
+  }
+  .plan-price {
+    font-size: 22px;
+  }
+}
