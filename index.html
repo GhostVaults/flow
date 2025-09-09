@@ -6,185 +6,127 @@
   <title>GhostVault</title>
   <link rel="stylesheet" href="templatemo-nexus-style.css">
   <link rel="icon" type="image/png" href="favicon-32x32.png">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Courier New', monospace;
-      color: #cce7ff;
-      background: radial-gradient(circle at top, #0a0a12, #050507);
-      overflow-x: hidden;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 40px;
-      background: rgba(0, 0, 0, 0.8);
-      border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      color: cyan;
-      font-size: 1.3rem;
-    }
-    header nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #b0dfff;
-      transition: color 0.3s;
-    }
-    header nav a:hover {
-      color: cyan;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 120px 20px 80px;
-      background: url('bg-grid.png') center/cover no-repeat, #050507;
-    }
-    .hero h2 {
-      font-size: 2.8rem;
-      background: linear-gradient(90deg, cyan, violet);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #b8cde6;
-    }
-
-    .btns {
-      margin-top: 30px;
-    }
-    .btns a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 28px;
-      border: 1px solid cyan;
-      border-radius: 6px;
-      color: cyan;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    .btns a:hover {
-      background: cyan;
-      color: #050507;
-    }
-
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .section h3 {
-      font-size: 2rem;
-      margin-bottom: 25px;
-      color: cyan;
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      border-radius: 10px;
-      padding: 25px;
-      margin: 20px auto;
-      max-width: 400px;
-    }
-    .card h4 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    .price {
-      font-size: 1.8rem;
-      margin: 10px 0;
-      color: violet;
-    }
-    .card p {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      border: 1px solid violet;
-      border-radius: 6px;
-      color: violet;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    .card a:hover {
-      background: violet;
-      color: #050507;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #888;
-      border-top: 1px solid rgba(0, 255, 255, 0.2);
-      margin-top: 60px;
-    }
-
-    @media (max-width: 768px) {
-      .hero h2 { font-size: 2.2rem; }
-      .hero p { font-size: 1rem; }
-      header { padding: 10px 20px; }
-    }
-  </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>&gt; GhostVault_</h1>
-    <nav>
-      <a href="#tools">Tools</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+      <h1 class="logo">GhostVault</h1>
+      <nav>
+        <a href="#features">What’s Inside</a>
+        <a href="#pricing">Access</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
-    <h2>GHOSTVAULT</h2>
-    <p>Tools and methods, explained with guidance if you need it.</p>
-    <div class="btns">
-      <a href="#tools">Explore</a>
-      <a href="#pricing">Get Access</a>
+    <div class="container">
+      <h2 class="hero-title">Scripts, methods and guidance — everything explained.</h2>
+      <p class="hero-subtitle">Real resources you can use. Clear guides. Direct support when you need it.</p>
+      <div class="hero-buttons">
+        <a href="#features" class="btn-primary">Explore Vault</a>
+        <a href="#pricing" class="btn-secondary">Get Access</a>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="tools">
-    <h3>Available Packs</h3>
-    <div class="card">
-      <h4>Starter Pack</h4>
-      <div class="price">$10</div>
-      <p>Basics, intro tools, clear explanations. With support.</p>
-      <a href="#">Access</a>
-    </div>
-    <div class="card">
-      <h4>Advanced Pack</h4>
-      <div class="price">$18</div>
-      <p>Deeper methods, toolkits, case examples. Support included.</p>
-      <a href="#">Access</a>
-    </div>
-    <div class="card">
-      <h4>Full Vault</h4>
-      <div class="price">$25</div>
-      <p>All kits + bonus content + lifetime updates. Full support.</p>
-      <a href="#">Access</a>
+  <!-- Features -->
+  <section id="features" class="features">
+    <div class="container">
+      <h3 class="section-title">What You Get</h3>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h4>Scripts & Tools</h4>
+          <p>Collections of working scripts and tools, explained clearly so you can apply them right away.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Methods & Workflows</h4>
+          <p>Step-by-step processes and practical workflows used in real scenarios.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Guides & Explanations</h4>
+          <p>Detailed write-ups and walkthroughs — no guessing, everything broken down.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Direct Support</h4>
+          <p>Every access level comes with my personal support and answers to your questions.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <h3>Contact</h3>
-    <p>Questions? DM on Instagram: <strong>@hacker.buy</strong></p>
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h3 class="section-title">Access Options</h3>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h4>Scripts + Guides</h4>
+          <p class="plan-price">€29</p>
+          <ul>
+            <li>Essential scripts</li>
+            <li>Step-by-step guides</li>
+            <li>Direct support</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Get Access</a>
+        </div>
+
+        <div class="pricing-card">
+          <h4>Methods Pack</h4>
+          <p class="plan-price">€59</p>
+          <ul>
+            <li>All scripts & guides</li>
+            <li>Detailed workflow methods</li>
+            <li>Case examples</li>
+            <li>Direct support</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Unlock Pack</a>
+        </div>
+
+        <div class="pricing-card">
+          <h4>Full Vault</h4>
+          <p class="plan-price">€99</p>
+          <ul>
+            <li>Complete collection</li>
+            <li>Lifetime updates</li>
+            <li>Extra resources</li>
+            <li>Direct support</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Enter Vault</a>
+        </div>
+
+        <div class="pricing-card">
+          <h4>Direct Session</h4>
+          <p class="plan-price">€149</p>
+          <ul>
+            <li>1-on-1 private session</li>
+            <li>Custom walkthrough</li>
+            <li>Direct answers to your questions</li>
+            <li>Full support</li>
+          </ul>
+          <a href="#contact" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h3 class="section-title">Contact</h3>
+      <p>For questions or access, reach out directly:</p>
+      <p><strong>Email:</strong> ghostvault@mail.com</p>
+      <p><strong>Instagram:</strong> @ghostvault</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    ⚠️ This vault was never meant to be public. Use at your own risk.
+    <div class="container">
+      ⚠️ This vault was never meant to be public. Use at your own risk.
+    </div>
   </footer>
 </body>
 </html>
