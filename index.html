@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GhostVault - Hacker OSINT Hub</title>
+    <title>GhostVault</title>
     <link href="templatemo-nexus-style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon-32x32.png">
 </head>
 <body id="top">
-    <!-- Background Elements -->
+    <!-- Background -->
     <div class="cyber-bg">
         <div class="cyber-gradient"></div>
         <div class="matrix-rain" id="matrixRain"></div>
@@ -34,14 +34,12 @@
         <div class="nav-container">
             <a href="#top" class="logo">GhostVault</a>
             <ul class="nav-links">
-                <li><a href="#features">Kits</a></li>
+                <li><a href="#features">Tools</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#whyus">Why Us</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-bottom">
-                <a href="#pricing" class="cyber-button">Access Vault</a>
+                <a href="#pricing" class="cyber-button">Enter Vault</a>
             </div>
             <button class="mobile-menu-button" id="mobileMenuBtn">
                 <div class="hamburger">
@@ -53,16 +51,34 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#top" class="mobile-menu-logo">GhostVault</a>
+            <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        </div>
+        <div class="mobile-menu-cta">
+            <a href="#pricing" class="cyber-button">Enter Vault</a>
+        </div>
+        <nav class="mobile-menu-nav">
+            <ul>
+                <li><a href="#features">Tools</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <h1 class="hero-title">
                 <span class="hero-nexus">Ghost</span><span class="hero-flow">Vault</span>
             </h1>
-            <p class="hero-subtitle">Unlock hidden knowledge. Legal hacking vibes. OSINT packs for the curious.</p>
-            <p class="warning-text">⚠️ This vault was never meant to be public. Use at your own risk.</p>
+            <p class="hero-subtitle">Tools and methods, explained with guidance if you need it.</p>
             <div class="hero-buttons">
-                <a href="#features" class="btn-primary">Explore Kits</a>
+                <a href="#features" class="btn-primary">Explore</a>
                 <a href="#pricing" class="btn-secondary">Get Access</a>
             </div>
         </div>
@@ -72,27 +88,27 @@
     <section class="features fade-up" id="features">
         <div class="features-container">
             <div class="section-header">
-                <h2 class="section-title">Hacker Kits</h2>
-                <p class="section-subtitle">Curated OSINT tricks & tools packed in underground style</p>
+                <h2 class="section-title">What’s Inside</h2>
+                <p class="section-subtitle">Resources, tools and guidance — without the noise</p>
             </div>
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📷</div>
-                    <h3>Instagram OSINT</h3>
-                    <p>Learn to pull hidden data, HD profile pics, reverse searches & protect yourself from exposure.</p>
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Tools</h3>
+                    <p>Collections of scripts, software and resources rarely found in one place. With explanations so you know how to use them.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>WhatsApp Metadata</h3>
-                    <p>Check online status, validate numbers, analyze backup data — all explained legally & safe.</p>
+                    <div class="feature-icon">📖</div>
+                    <h3>Methods</h3>
+                    <p>Approaches and workflows that actually work in practice. No filler, only useful processes.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🌐</div>
-                    <h3>Dark Social Toolkit</h3>
-                    <p>Facebook hidden search, TikTok analytics hacks, and more OSINT tricks compiled in one place.</p>
+                    <div class="feature-icon">🤝</div>
+                    <h3>Support</h3>
+                    <p>Direct support included with every package. If you need guidance, you’ll have it.</p>
                 </div>
             </div>
         </div>
@@ -103,80 +119,55 @@
         <div class="pricing-container">
             <div class="section-header">
                 <h2 class="section-title">Choose Your Access</h2>
-                <p class="section-subtitle">Instant downloads • Legal • Underground vibe</p>
+                <p class="section-subtitle">Instant access • Support included</p>
             </div>
 
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="plan-name">Starter Pack</div>
-                    <div class="plan-price">$7</div>
+                    <div class="plan-price">€19</div>
                     <ul class="plan-features">
-                        <li>Instagram OSINT PDF</li>
-                        <li>Basic tools list</li>
-                        <li>Protect-yourself tips</li>
+                        <li>Core documents & resources</li>
+                        <li>Step-by-step basics</li>
+                        <li>Support included</li>
                     </ul>
                     <a href="#" class="btn-secondary">Get Access</a>
                 </div>
 
                 <div class="pricing-card featured">
-                    <div class="plan-name">Pro Hacker Kit</div>
-                    <div class="plan-price">$15</div>
+                    <div class="plan-name">Pro Tools</div>
+                    <div class="plan-price">€49</div>
                     <ul class="plan-features">
-                        <li>Instagram + WhatsApp pack</li>
-                        <li>Extended OSINT tools</li>
-                        <li>Exclusive cheat sheets</li>
+                        <li>All from Starter Pack</li>
+                        <li>Extended tools & scripts</li>
+                        <li>Guides for practical use</li>
+                        <li>Support included</li>
                     </ul>
                     <a href="#" class="btn-primary">Unlock Now</a>
                 </div>
 
                 <div class="pricing-card">
-                    <div class="plan-name">Full Vault</div>
-                    <div class="plan-price">$25</div>
+                    <div class="plan-name">Full Access</div>
+                    <div class="plan-price">€99</div>
                     <ul class="plan-features">
-                        <li>All kits (IG, WhatsApp, Dark Social)</li>
-                        <li>Bonus wallpapers pack</li>
+                        <li>Complete collection</li>
                         <li>Lifetime updates</li>
+                        <li>Extra resources</li>
+                        <li>Support included</li>
                     </ul>
                     <a href="#" class="btn-secondary">Enter Vault</a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Why Us Section -->
-    <section class="whyus fade-up" id="whyus">
-        <div class="whyus-container">
-            <div class="section-header">
-                <h2 class="section-title">Why GhostVault?</h2>
-                <p class="section-subtitle">Not just another PDF dump — this is crafted for impact</p>
-            </div>
-            <ul class="whyus-list">
-                <li>✔️ Underground curated OSINT knowledge</li>
-                <li>✔️ Instant secure access</li>
-                <li>✔️ Legal but powerful tricks</li>
-                <li>✔️ Lifetime updates included</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials fade-up" id="testimonials">
-        <div class="testimonials-container">
-            <div class="section-header">
-                <h2 class="section-title">What Hackers Say</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>"Didn’t expect this much value for $15. Insane."</p>
-                    <span>- rootX99</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Finally something that feels underground but safe."</p>
-                    <span>- anonGhost</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Full Vault was worth it just for the bonus pack."</p>
-                    <span>- darkNetWolf</span>
+                <div class="pricing-card premium">
+                    <div class="plan-name">1-on-1 Session</div>
+                    <div class="plan-price">€149</div>
+                    <ul class="plan-features">
+                        <li>Private consultation</li>
+                        <li>Custom walkthroughs</li>
+                        <li>Direct answers to your questions</li>
+                        <li>Full support</li>
+                    </ul>
+                    <a href="#" class="btn-primary">Book Now</a>
                 </div>
             </div>
         </div>
@@ -187,7 +178,7 @@
         <div class="contact-container">
             <div class="section-header">
                 <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">Reach out — collabs, questions, or support</p>
+                <p class="section-subtitle">Questions or collabs — reach out</p>
             </div>
 
             <div class="contact-form-wrapper">
@@ -217,7 +208,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#">Disclaimer: Educational use only. At your own risk.</a>
+                <a href="#">⚠️ For learning only. What you do with it is on you.</a>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 GhostVault. All rights reserved.</p>
