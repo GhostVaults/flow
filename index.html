@@ -1,221 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GhostVault</title>
-    <link href="templatemo-nexus-style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon-32x32.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GhostVault</title>
+  <link rel="icon" type="image/png" href="favicon-32x32.png">
+  <link href="templatemo-nexus-style.css" rel="stylesheet">
+
+  <!-- Mobile-first responsive overrides (keeps original desktop CSS, but forces mobile readability) -->
+  <style>
+    /* Basic reset tweaks for consistent mobile rendering */
+    html,body{height:100%;}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#dfeff6;background:#06060a;}
+
+    /* Navigation (mobile-first) */
+    .nav-container{display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
+    .logo{font-weight:700;font-size:18px;color:#9ef3ff;letter-spacing:0.6px}
+    .nav-links{display:none}
+    .cyber-button{display:inline-block;padding:8px 12px;border-radius:8px;background:transparent;color:#9ef3ff;border:1px solid rgba(158,243,255,0.12);text-decoration:none;font-weight:600}
+
+    /* Hero */
+    .hero{padding:40px 16px;text-align:center}
+    .hero-title{font-size:30px;line-height:1;margin:0;color:#b8f8ff;font-weight:800}
+    .hero-subtitle{margin-top:10px;font-size:14px;color:#9fb6be;max-width:520px;margin-left:auto;margin-right:auto}
+    .hero-buttons{margin-top:18px;display:flex;flex-direction:column;gap:10px;align-items:center}
+    .btn-primary,.btn-secondary{display:block;width:100%;max-width:360px;padding:11px 14px;border-radius:8px;text-decoration:none;text-align:center;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,#03f6ff33,#b569ff22);color:#e6ffff;border:1px solid rgba(0,255,255,0.06)}
+    .btn-secondary{background:transparent;color:#9ef3ff;border:1px solid rgba(158,243,255,0.08)}
+
+    /* Sections */
+    section{padding:18px 12px}
+    .section-header{margin-bottom:12px;text-align:center}
+    .section-title{font-size:18px;color:#c7f7ff;margin:0}
+    .section-subtitle{color:#93a9ae;font-size:13px;margin-top:6px}
+
+    /* Features grid (stacked on mobile) */
+    .features-grid{display:flex;flex-direction:column;gap:12px}
+    .feature-card{background:rgba(255,255,255,0.02);padding:14px;border-radius:10px}
+    .feature-icon{font-size:20px;margin-bottom:8px}
+    .feature-card h3{margin:0 0 6px 0;font-size:15px;color:#e6ffff}
+    .feature-card p{margin:0;color:#9fb6be;font-size:13px}
+
+    /* Pricing (stacked mobile cards) */
+    .pricing-grid{display:flex;flex-direction:column;gap:12px}
+    .pricing-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:14px;border-radius:10px}
+    .plan-name{font-size:13px;color:#9ef3ff;font-weight:700}
+    .plan-price{font-size:28px;color:#bafcff;margin:8px 0}
+    .plan-features{margin:0;padding-left:18px;color:#9fb6be;font-size:13px}
+
+    /* Contact */
+    .contact-form{display:block;padding:8px}
+    .form-group{margin-bottom:10px}
+    input[type=text],input[type=email],textarea{width:100%;padding:10px;border-radius:7px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.01);color:#e6ffff}
+
+    /* Footer */
+    .footer-content{padding:18px;text-align:center;font-size:12px;color:#99bfc6}
+
+    /* Mobile menu (hidden by default) */
+    .mobile-menu{position:fixed;top:0;right:-100%;width:78%;height:100%;background:#05060a;padding:18px;transition:right .25s ease;z-index:60}
+    .mobile-menu.open{right:0}
+    .mobile-menu-overlay{display:none}
+    .mobile-menu-overlay.open{display:block;position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:50}
+
+    /* Small desktop / larger devices overrides */
+    @media(min-width:769px){
+      .nav-container{padding:18px 36px}
+      .nav-links{display:flex;gap:18px;align-items:center}
+      .cyber-button{display:inline-block}
+      .hero{padding:90px 48px;text-align:left}
+      .hero-title{font-size:48px}
+      .hero-subtitle{font-size:16px;text-align:left;margin-left:0}
+      .hero-buttons{flex-direction:row;gap:12px}
+      .features-grid{flex-direction:row}
+      .feature-card{flex:1}
+      .pricing-grid{flex-direction:row}
+      .pricing-card{flex:1}
+      .mobile-menu{display:none}
+      .mobile-menu-overlay{display:none}
+    }
+
+    /* Ensure buttons never break letters on small screens */
+    .btn-primary,.btn-secondary,.cyber-button{white-space:nowrap}
+    /* allow them to shrink slightly if necessary */
+    .btn-primary,.btn-secondary{overflow:hidden;text-overflow:ellipsis}
+  </style>
 </head>
 <body id="top">
-    <!-- Background -->
-    <div class="cyber-bg">
-        <div class="cyber-gradient"></div>
-        <div class="matrix-rain" id="matrixRain"></div>
+  <!-- Background elements are kept for visual effect from original theme -->
+
+  <nav>
+    <div class="nav-container">
+      <a href="#top" class="logo">GhostVault</a>
+      <ul class="nav-links">
+        <li><a href="#features">Tools</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#pricing" class="cyber-button">Enter Vault</a>
+
+      <button id="mobileMenuBtn" aria-label="menu" style="background:transparent;border:0;color:#9ef3ff;font-size:20px">☰</button>
     </div>
+  </nav>
 
-    <div class="particles" id="particlesContainer"></div>
-    <div class="data-streams" id="dataStreams"></div>
-
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-
-    <div class="grid-overlay">
-        <div class="grid-lines"></div>
-        <div class="grid-glow"></div>
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <strong style="color:#9ef3ff">GhostVault</strong>
+      <button id="mobileMenuClose" style="background:transparent;border:0;color:#9ef3ff;font-size:20px">✕</button>
     </div>
-
-    <div class="scanlines"></div>
-    <div class="noise-overlay"></div>
-
-    <!-- Navigation -->
     <nav>
-        <div class="nav-container">
-            <a href="#top" class="logo">GhostVault</a>
-            <ul class="nav-links">
-                <li><a href="#features">Tools</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-bottom">
-                <a href="#pricing" class="cyber-button">Enter Vault</a>
-            </div>
-            <button class="mobile-menu-button" id="mobileMenuBtn">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-        </div>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px">
+        <li><a href="#features" style="color:#dff">Tools</a></li>
+        <li><a href="#pricing" style="color:#dff">Pricing</a></li>
+        <li><a href="#contact" style="color:#dff">Contact</a></li>
+      </ul>
     </nav>
+  </div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <a href="#top" class="mobile-menu-logo">GhostVault</a>
-            <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
-        </div>
-        <div class="mobile-menu-cta">
-            <a href="#pricing" class="cyber-button">Enter Vault</a>
-        </div>
-        <nav class="mobile-menu-nav">
-            <ul>
-                <li><a href="#features">Tools</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-container">
+      <h1 class="hero-title">GhostVault</h1>
+      <p class="hero-subtitle">Tools and methods, explained with guidance if you need it.</p>
+      <div class="hero-buttons">
+        <a href="#features" class="btn-primary">Explore</a>
+        <a href="#pricing" class="btn-secondary">Get Access</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <h1 class="hero-title">
-                <span class="hero-nexus">Ghost</span><span class="hero-flow">Vault</span>
-            </h1>
-            <p class="hero-subtitle">Tools and methods, explained with guidance if you need it.</p>
-            <div class="hero-buttons">
-                <a href="#features" class="btn-primary">Explore</a>
-                <a href="#pricing" class="btn-secondary">Get Access</a>
-            </div>
+  <!-- Features -->
+  <section id="features" class="features">
+    <div class="features-container">
+      <div class="section-header">
+        <h2 class="section-title">What’s Inside</h2>
+        <p class="section-subtitle">Resources, tools and guidance — without the noise</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <h3>Tools</h3>
+          <p>Curated collections of scripts, utilities and resources. Clear notes on how to use them.</p>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features fade-up" id="features">
-        <div class="features-container">
-            <div class="section-header">
-                <h2 class="section-title">What’s Inside</h2>
-                <p class="section-subtitle">Resources, tools and guidance — without the noise</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>Tools</h3>
-                    <p>Collections of scripts, software and resources rarely found in one place. With explanations so you know how to use them.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">📖</div>
-                    <h3>Methods</h3>
-                    <p>Approaches and workflows that actually work in practice. No filler, only useful processes.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Support</h3>
-                    <p>Direct support included with every package. If you need guidance, you’ll have it.</p>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">📖</div>
+          <h3>Methods</h3>
+          <p>Practical approaches and workflows that are used in real situations. No fluff.</p>
         </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing fade-up" id="pricing">
-        <div class="pricing-container">
-            <div class="section-header">
-                <h2 class="section-title">Choose Your Access</h2>
-                <p class="section-subtitle">Instant access • Support included</p>
-            </div>
-
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div class="plan-name">Starter Pack</div>
-                    <div class="plan-price">€19</div>
-                    <ul class="plan-features">
-                        <li>Core documents & resources</li>
-                        <li>Step-by-step basics</li>
-                        <li>Support included</li>
-                    </ul>
-                    <a href="#" class="btn-secondary">Get Access</a>
-                </div>
-
-                <div class="pricing-card featured">
-                    <div class="plan-name">Pro Tools</div>
-                    <div class="plan-price">€49</div>
-                    <ul class="plan-features">
-                        <li>All from Starter Pack</li>
-                        <li>Extended tools & scripts</li>
-                        <li>Guides for practical use</li>
-                        <li>Support included</li>
-                    </ul>
-                    <a href="#" class="btn-primary">Unlock Now</a>
-                </div>
-
-                <div class="pricing-card">
-                    <div class="plan-name">Full Access</div>
-                    <div class="plan-price">€99</div>
-                    <ul class="plan-features">
-                        <li>Complete collection</li>
-                        <li>Lifetime updates</li>
-                        <li>Extra resources</li>
-                        <li>Support included</li>
-                    </ul>
-                    <a href="#" class="btn-secondary">Enter Vault</a>
-                </div>
-
-                <div class="pricing-card premium">
-                    <div class="plan-name">1-on-1 Session</div>
-                    <div class="plan-price">€149</div>
-                    <ul class="plan-features">
-                        <li>Private consultation</li>
-                        <li>Custom walkthroughs</li>
-                        <li>Direct answers to your questions</li>
-                        <li>Full support</li>
-                    </ul>
-                    <a href="#" class="btn-primary">Book Now</a>
-                </div>
-            </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Support</h3>
+          <p>Every purchase includes direct guidance — help setting things up or understanding how to use the resources.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="contact fade-up" id="contact">
-        <div class="contact-container">
-            <div class="section-header">
-                <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">Questions or collabs — reach out</p>
-            </div>
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <div class="pricing-container">
+      <div class="section-header">
+        <h2 class="section-title">Choose Your Access</h2>
+        <p class="section-subtitle">Instant access • Support included</p>
+      </div>
 
-            <div class="contact-form-wrapper">
-                <div class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="you@mail.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-primary btn-submit">Send</button>
-                </div>
-            </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-name">Starter Pack</div>
+          <div class="plan-price">€19</div>
+          <ul class="plan-features">
+            <li>Core documents & resources</li>
+            <li>Step-by-step basics</li>
+            <li>Support included</li>
+          </ul>
+          <a href="#" class="btn-secondary">Get Access</a>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#">⚠️ For learning only. What you do with it is on you.</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 GhostVault. All rights reserved.</p>
-            </div>
+        <div class="pricing-card featured">
+          <div class="plan-name">Pro Tools</div>
+          <div class="plan-price">€49</div>
+          <ul class="plan-features">
+            <li>All from Starter Pack</li>
+            <li>Extended tools & scripts</li>
+            <li>Guides for practical use</li>
+            <li>Support included</li>
+          </ul>
+          <a href="#" class="btn-primary">Unlock Now</a>
         </div>
-    </footer>
 
-    <script src="templatemo-nexus-scripts.js"></script>
+        <div class="pricing-card">
+          <div class="plan-name">Full Access</div>
+          <div class="plan-price">€99</div>
+          <ul class="plan-features">
+            <li>Complete collection</li>
+            <li>Lifetime updates</li>
+            <li>Extra resources</li>
+            <li>Support included</li>
+          </ul>
+          <a href="#" class="btn-secondary">Enter Vault</a>
+        </div>
+
+        <div class="pricing-card premium">
+          <div class="plan-name">1-on-1 Session</div>
+          <div class="plan-price">€149</div>
+          <ul class="plan-features">
+            <li>Private consultation</li>
+            <li>Custom walkthroughs</li>
+            <li>Direct answers to your questions</li>
+            <li>Full support</li>
+          </ul>
+          <a href="#" class="btn-primary">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">Questions or collabs — reach out</p>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <form id="contactForm" class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@mail.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#">⚠️ For learning only. What you do with it is on you.</a>
+      </div>
+      <div class="footer-bottom">
+        <p style="margin-top:8px">&copy; 2025 GhostVault. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Small JS for mobile menu + form handling (keeps behavior simple and safe) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const btn = document.getElementById('mobileMenuBtn');
+      const menu = document.getElementById('mobileMenu');
+      const overlay = document.getElementById('mobileMenuOverlay');
+      const closeBtn = document.getElementById('mobileMenuClose');
+
+      function openMenu(){ menu.classList.add('open'); overlay.classList.add('open'); menu.setAttribute('aria-hidden','false'); }
+      function closeMenu(){ menu.classList.remove('open'); overlay.classList.remove('open'); menu.setAttribute('aria-hidden','true'); }
+
+      if(btn) btn.addEventListener('click', openMenu);
+      if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+      if(overlay) overlay.addEventListener('click', closeMenu);
+
+      // contact form demo handler (no backend on GitHub Pages). Replace action with your form endpoint later.
+      const form = document.getElementById('contactForm');
+      if(form){
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          // simple user feedback without network call
+          alert('Thanks — message received. I will reply to your email.');
+          form.reset();
+        });
+      }
+    });
+  </script>
 </body>
 </html>
